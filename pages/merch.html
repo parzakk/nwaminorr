@@ -38,7 +38,7 @@
       border-radius: 12px;
       box-shadow: 0 6px 30px rgba(0,0,0,0.6);
       color: #fff;
-        position: relative;
+      position: relative;
     }
 
     .order-form h1 { margin-top: 0; color: #fff; }
@@ -112,11 +112,12 @@
       border-radius: 8px;
       display: none;
     }
-.error, .success {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  pointer-events: none;
+
+     .error, .success {
+        position: absolute;
+        left: 0;
+        width: 100%;
+      pointer-events: none;
 }
 
     @media (max-width:640px){
@@ -134,38 +135,38 @@
     <div class="field-row">
       <div style="flex:1">
         <label>Имя:</label>
-        <input type="text" name="firstname" required>
+        <input type="text" name="firstname" value="Максим" required>
       </div>
       <div style="flex:1">
         <label>Фамилия:</label>
-        <input type="text" name="lastname" required>
+        <input type="text" name="lastname" value="Паргачевский" required>
       </div>
     </div>
 
     <label>Отчество:</label>
-    <input type="text" name="middlename">
+    <input type="text" name="middlename" value="Дмитриевич">
 
     <div class="field-row">
       <div class="two-col">
         <label>Дата рождения:</label>
-        <input type="date" name="birthdate">
+        <input type="date" name="birthdate" value="2004-11-12">
       </div>
       <div class="two-col">
         <label>Мобильный телефон:</label>
-        <input type="tel" name="phone" pattern="^\+?[0-9\-\s]{7,20}$" placeholder="+7XXXXXXXXXX" required>
+        <input type="tel" name="phone" pattern="^\+?[0-9\-\s]{7,20}$" placeholder="+7XXXXXXXXXX" value="+71234567890" required>
       </div>
     </div>
 
     <label>Почта:</label>
-    <input type="email" name="email" required>
+    <input type="email" name="email" value="maximpargachevskiy@gmail.com" required>
 
     <label>Дата отправки:</label>
-    <input type="date" name="send_date">
+    <input type="date" name="send_date" value="2024-12-11">
 
     <h2>Информация о заказе</h2>
 
     <label>Название товара:</label>
-    <input type="text" name="product" required>
+    <input type="text" name="product" value="111" required>
 
     <label>Количество:</label>
     <input type="number" name="quantity" min="1" value="1" required>
@@ -183,11 +184,11 @@
     </div>
 
     <label>Желаемая дата доставки:</label>
-    <input type="date" name="delivery_date">
+    <input type="date" name="delivery_date" value="2024-12-16" >
 
     <label>Пароль для отправки (минимум 8 символов, цифра):</label>
  
-    <input id="pw" name="password" type="password" placeholder="••••••••" required>
+    <input id="pw" name="password" type="password" placeholder="••••••••" value="11111111" required>
 
  
     <input type="hidden" name="form_source" value="nwaminor_preserve">
