@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Home — N.W.A</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1, h2 {
+      color: #e50914;
+      text-align: center;
+    }
+
+    .page-nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .page-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      background: #e50914;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .page-nav a:hover {
+      background: #ff3030;
+    }
+
+    .history {
+      background: #111;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    }
+
+    .photos {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+
+    .photos img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      border: 2px solid #333;
+      transition: transform 0.3s;
+    }
+
+    .photos img:hover {
+      transform: scale(1.05);
+    }
+
+    .discography {
+      margin-top: 40px;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .discography::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url("../img/nwa_bg.jpg") center/cover no-repeat;
+      opacity: 0.25;
+      z-index: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      z-index: 1;
+      position: relative;
+      color: #fff;
+      text-align: center;
+      backdrop-filter: blur(2px);
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #444;
+    }
+
+    th {
+      background-color: rgba(229, 9, 20, 0.8);
+    }
+
+    tr:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    td img {
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+      border-radius: 4px;
+      margin-right: 8px;
+    }
+
+    td a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    td a:hover {
+      color: #ff3030;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .photos {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="page-nav">
+      <a href="#history">История</a>
+      <a href="#discography">Дискография</a>
+    </div>
+
+    <h1 id="history">История группы N.W.A</h1>
+
+    <div class="history">
+      <p><strong>N.W.A (Niggaz Wit Attitudes)</strong> — легендарная американская хип-хоп-группа из Комптона, штат Калифорния. Коллектив был основан в 1987 году и стал пионером жанра <em>гангста-рэп</em>. 
+      Их тексты открыто говорили о жизни в гетто, полицейском насилии и социальных проблемах, что вызвало большой резонанс.</p>
+
+      <p>Первый альбом <strong>Straight Outta Compton</strong> (1988) стал революционным — он вывел западное побережье на музыкальную карту и сделал участников (Eazy-E, Dr. Dre, Ice Cube, MC Ren и DJ Yella) культовыми фигурами в истории рэпа. 
+      Несмотря на скандалы и распад в начале 1990-х, влияние группы чувствуется до сих пор — N.W.A считаются основателями современной хип-хоп-культуры.</p>
+    </div>
+
+    <div class="photos">
+      <img src="../img/nwa1.jpg" alt="N.W.A group photo 1">
+      <img src="../img/nwa2.jpg" alt="N.W.A group photo 2">
+    </div>
+
+    <div class="discography" id="discography">
+      <h2>Дискография N.W.A</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Альбом</th>
+            <th>Год выпуска</th>
+            <th>Лейбл</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <img src="../img/alb1.jpg" alt="Straight Outta Compton">
+              <a href="https://ru.wikipedia.org/wiki/Straight_Outta_Compton" target="_blank">Straight Outta Compton</a>
+            </td>
+            <td>1988</td>
+            <td>Ruthless / Priority</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="../img/alb2.jpg" alt="100 Miles and Runnin’">
+              <a href="https://ru.wikipedia.org/wiki/100_Miles_and_Runnin%27" target="_blank">100 Miles and Runnin’ (EP)</a>
+            </td>
+            <td>1990</td>
+            <td>Ruthless / Priority</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="../img/alb3.jpg" alt="Niggaz4Life">
+              <a href="https://ru.wikipedia.org/wiki/Niggaz4Life" target="_blank">Niggaz4Life</a>
+            </td>
+            <td>1991</td>
+            <td>Ruthless / Priority</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="../img/alb4.jpg" alt="Greatest Hits">
+              <a href="https://en.wikipedia.org/wiki/N.W.A._Greatest_Hits" target="_blank">Greatest Hits</a>
+            </td>
+            <td>1996</td>
+            <td>Ruthless / Priority</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="../img/alb5.jpg" alt="The Best of N.W.A">
+              <a href="https://en.wikipedia.org/wiki/The_Best_of_N.W.A:_The_Strength_of_Street_Knowledge" target="_blank">The Best of N.W.A: The Strength of Street Knowledge</a>
+            </td>
+            <td>2006</td>
+            <td>Capitol / Priority</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+  <a href="#history" 
+     style="
+       display:inline-block;
+       background:#e50914;
+       color:#fff;
+       padding:10px 16px;
+       border-radius:8px;
+       font-weight:bold;
+       text-decoration:none;
+       transition:0.3s;
+     ">
+    Наверх ↑
+  </a>
+</div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+</html>

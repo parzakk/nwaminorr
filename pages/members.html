@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Участники N.W.A</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous">
+  <style>
+
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .members-grid {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .member-card {
+      width: 180px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .member-card img {
+      width: 100%;
+      border-radius: 12px;
+      border: 2px solid #fff;
+    }
+
+    .member-card:hover {
+      transform: scale(1.05);
+    }
+
+ 
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
+      color: #000;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #000;
+    }
+
+    .close:hover {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Участники N.W.A</h1>
+
+  <div class="members-grid">
+
+  <!-- Eazy-E -->
+  <div class="member-card" onclick="showInfo('Eazy-E', 'Настоящее имя — Eric Wright. Основатель группы, чья энергия задала стиль гангста-рэпа.')">
+    <img src="../img/eazye.jpg" alt="Eazy-E">
+    <p>Eazy-E</p>
+  </div>
+
+  <!-- Dr. Dre -->
+  <div class="member-card" onclick="showInfo('Dr. Dre', 'Настоящее имя — Andre Young. Продюсер, заложил звук современного хип-хопа.')">
+    <img src="../img/drdre.jpg" alt="Dr. Dre">
+    <p>Dr. Dre</p>
+  </div>
+
+  <!-- Ice Cube -->
+  <div class="member-card" onclick="showInfo('Ice Cube', 'Настоящее имя — O’Shea Jackson. Главный автор текстов N.W.A и успешный актёр.')">
+    <img src="../img/icecube.jpg" alt="Ice Cube">
+    <p>Ice Cube</p>
+  </div>
+
+  <!-- Arabian Prince -->
+  <div class="member-card" onclick="showInfo('Arabian Prince', 'Настоящее имя — Kim Nazel. Один из ранних участников N.W.A, внесший вклад в раннее звучание группы.')">
+    <img src="../img/arabianprince.jpg" alt="Arabian Prince">
+    <p>Arabian Prince</p>
+  </div>
+
+  <!-- MC Ren -->
+  <div class="member-card" onclick="showInfo('MC Ren', 'Настоящее имя — Lorenzo Patterson. Один из ключевых авторов текстов и важнейший участник позднего состава N.W.A.')">
+    <img src="../img/mcren.jpg" alt="MC Ren">
+    <p>MC Ren</p>
+  </div>
+
+  <!-- DJ Yella -->
+  <div class="member-card" onclick="showInfo('DJ Yella', 'Настоящее имя — Antoine Carraby. Продюсер, диджей и один из основателей Ruthless Records вместе с Eazy-E.')">
+    <img src="../img/djyella.jpg" alt="DJ Yella">
+    <p>DJ Yella</p>
+  </div>
+
+</div>
+
+  
+  </div>
+
+  <div id="member-modal" class="modal">
+    <div class="modal-content" id="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modal-name"></h2>
+      <p id="modal-info"></p>
+    </div>
+  </div>
+
+  <script>
+ 
+    function showInfo(name, info) {
+      document.getElementById('modal-name').textContent = name;
+      document.getElementById('modal-info').textContent = info;
+      document.getElementById('member-modal').style.display = 'block';
+    }
+
+
+    function closeModal() {
+      document.getElementById('member-modal').style.display = 'none';
+    }
+
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('member-modal');
+      const content = document.getElementById('modal-content');
+      if (event.target === modal) {  
+        modal.style.display = 'none';
+      }
+    }
+  </script>
+   </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+</html>
