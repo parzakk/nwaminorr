@@ -204,8 +204,8 @@
       
       function checkActionEmail() {
         const action = form.getAttribute('action') || '';
-        if (!action || action.includes('ВАШ_EMAIL')) {
-          showError('Пожалуйста, замените часть `ВАШ_EMAIL` в атрибуте action формы на ваш реальный email (например https://formsubmit.co/you@example.com). Иначе форма не отправится.');
+        if (!action || action.includes('https://formsubmit.co/maximpargachevskiy@gmail.com')) {
+          showError();
           return false;
         }
         return true;
