@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Заказать альбом N.W.A</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous">
+  <style>
+    :root{
+      --bg: #000;
+      --card: #0f0f10;
+      --field: #1b1b1c;
+      --muted: #bdbdbd;
+      --accent: #e50914;
+      --accent-2: #ff3030;
+      --success: #2ecc71;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: Inter, system-ui, Arial, sans-serif;
+      background: var(--bg);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+    }
+
+    .order-form {
+      width: 100%;
+      max-width: 640px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.04);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.6);
+      color: #fff;
+    }
+
+    .order-form h1 { margin-top: 0; color: #fff; }
+    .order-form h2 { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+
+    .field-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="number"],
+    input[type="password"] {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px 12px;
+      margin-top: 6px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: var(--field);
+      color: #fff;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .two-col { width: calc(50% - 6px); min-width: 160px; }
+    .delivery, .extras { display:flex; gap:12px; margin-top:8px; flex-wrap:wrap; }
+
+    input[type="radio"], input[type="checkbox"] { transform: scale(1.05); margin-right:6px; }
+
+    .helper { font-size: 13px; color: #9b9b9b; margin-top:6px; }
+
+    button[type="submit"]{
+      margin-top: 18px;
+      padding: 10px 14px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background .15s ease;
+    }
+    button[type="submit"]:hover { background: var(--accent-2); }
+
+    .error {
+      margin-top: 10px;
+      color: #ff6b6b;
+      background: rgba(255,0,0,0.04);
+      padding: 8px 10px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .success {
+      margin-top: 10px;
+      color: var(--success);
+      background: rgba(46,204,113,0.05);
+      padding: 8px 10px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    @media (max-width:640px){
+      .two-col { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <form id="albumForm" action="https://formsubmit.co/maximpargachevskiy@gmail.com" method="POST" class="order-form" novalidate>
+    <h1>Заказать альбом N.W.A</h1>
+
+    <h2>Личные данные</h2>
+
+    <div class="field-row">
+      <div style="flex:1">
+        <label>Имя:</label>
+        <input type="text" name="firstname" required>
+      </div>
+      <div style="flex:1">
+        <label>Фамилия:</label>
+        <input type="text" name="lastname" required>
+      </div>
+    </div>
+
+    <label>Отчество:</label>
+    <input type="text" name="middlename">
+
+    <div class="field-row">
+      <div class="two-col">
+        <label>Дата рождения:</label>
+        <input type="date" name="birthdate">
+      </div>
+      <div class="two-col">
+        <label>Мобильный телефон:</label>
+        <input type="tel" name="phone" pattern="^\+?[0-9\-\s]{7,20}$" placeholder="+7XXXXXXXXXX" required>
+      </div>
+    </div>
+
+    <label>Почта:</label>
+    <input type="email" name="email" required>
+
+    <label>Дата отправки:</label>
+    <input type="date" name="send_date">
+
+    <h2>Информация о заказе</h2>
+
+    <label>Название товара:</label>
+    <input type="text" name="product" required>
+
+    <label>Количество:</label>
+    <input type="number" name="quantity" min="1" value="1" required>
+
+    <label>Способ доставки:</label>
+    <div class="delivery">
+      <label><input type="radio" name="delivery" value="Курьер"> Курьер</label>
+      <label><input type="radio" name="delivery" value="Самовывоз"> Самовывоз</label>
+    </div>
+
+    <label>Доп. услуги:</label>
+    <div class="extras">
+      <label><input type="checkbox" name="extra[]" value="Экспресс-доставка"> Экспресс-доставка</label>
+      <label><input type="checkbox" name="extra[]" value="Страховка"> Страховка</label>
+    </div>
+
+    <label>Желаемая дата доставки:</label>
+    <input type="date" name="delivery_date">
+
+    <label>Пароль для отправки (минимум 8 символов, цифра):</label>
+ 
+    <input id="pw" name="password" type="password" placeholder="••••••••" required>
+
+ 
+    <input type="hidden" name="form_source" value="nwaminor_preserve">
+    <button type="submit" id="submitBtn">Отправить данные</button>
+
+    <div class="error" id="errorBox"></div>
+    <div class="success" id="successBox">Данные успешно отправлены (если redirect работает).</div>
+  </form>
+
+  <script>
+    (function() {
+      const form = document.getElementById('albumForm');
+      const errorBox = document.getElementById('errorBox');
+      const successBox = document.getElementById('successBox');
+      const submitBtn = document.getElementById('submitBtn');
+      const pwInput = document.getElementById('pw');
+
+   
+      const VERIFICATION_PASSWORD = '11111111'; 
+
+      
+      function checkActionEmail() {
+        const action = form.getAttribute('action') || '';
+        if (!action || action.includes('ВАШ_EMAIL')) {
+          showError('Пожалуйста, замените часть `ВАШ_EMAIL` в атрибуте action формы на ваш реальный email (например https://formsubmit.co/you@example.com). Иначе форма не отправится.');
+          return false;
+        }
+        return true;
+      }
+
+      function showError(msg) {
+        errorBox.style.display = 'block';
+        errorBox.textContent = msg;
+        successBox.style.display = 'none';
+      }
+
+      function showSuccess(msg) {
+        successBox.style.display = 'block';
+        successBox.textContent = msg || successBox.textContent;
+        errorBox.style.display = 'none';
+      }
+
+      function validatePassword(pw) {
+        if (typeof pw !== 'string') return false;
+        if (pw.length < 8) return false;
+        if (!/[0-9]/.test(pw)) return false;
+        return true;
+      }
+
+    
+      form.addEventListener('submit', function(e) {
+        e.preventDefault(); 
+        errorBox.style.display = 'none';
+        successBox.style.display = 'none';
+
+       
+        if (!checkActionEmail()) return;
+
+        
+        if (!form.checkValidity()) {
+          showError('Пожалуйста, заполните обязательные поля корректно.');
+       
+          form.reportValidity();
+          return;
+        }
+
+       
+        const pw = pwInput.value || '';
+        if (!validatePassword(pw)) {
+          showError('Пароль не соответствует требованиям: минимум 8 символов и хотя бы одна цифра.');
+          pwInput.focus();
+          return;
+        }
+
+       
+        if (pw !== VERIFICATION_PASSWORD) {
+          showError('Неверный пароль для отправки данных.');
+          pwInput.focus();
+          return;
+        }
+
+      
+        pwInput.removeAttribute('name');
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Отправка...';
+
+        form.submit();
+
+      
+      });
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+</html>
